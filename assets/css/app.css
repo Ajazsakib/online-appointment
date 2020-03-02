@@ -1,0 +1,84 @@
+.user-detail
+{
+    width: 1140px;
+    margin: 100px auto;
+    border: 1px solid #ededed;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-control
+{
+    display: block;
+/*    margin: 5px 0px;*/
+/*    height: 30px;*/
+}
+.btn
+{
+    background: #c20302;
+    color: #ffffff;
+    padding: 10px 30px;
+    border: 0px !important;
+    cursor: pointer;
+}
+.btn-green
+{
+    background-color: #22c383 !important;
+    padding: 8px 30px !important;
+    border-radius: 50px !important;
+    border: 0px !important;
+    color: #ffffff !important;
+}
+.btn-submit
+{
+    background-color: #22c383 !important;
+    padding: 8px 30px !important;
+    margin-left: 15px;
+}
+.navbar
+{
+    width: 100%;
+    background-color: #e8efef !important;
+}
+.navbar-brand
+{
+    color: #22c383;
+    font-weight: 600;
+}
+.navbar-brand:hover
+{
+    color: #22c383;   
+}
+.navbar-nav .nav-item
+{
+    margin: 0px 0px 0px 30px;
+}
+.navbar-nav .nav-link
+{
+    color: #2b2d50;
+}
+.banner
+{
+    height: 600px;
+    background-color: #e8efef;
+}
+.banner .banner-text
+{
+    margin-top: 200px;
+}
+.banner .banner-image
+{
+  
+}
+.about-us
+{
+    margin: 30px 0px;
+}
+
+.login_bg
+{
+    background-color: #ededed;
+   display: flex;
+    align-items: center;
+    height: 100vh;
+}
