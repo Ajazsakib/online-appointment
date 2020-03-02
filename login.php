@@ -18,7 +18,7 @@
         }
         else
         {
-            header("location:index.php");
+            header("location:user-dashboard/user-dashboard.php");
         }
     }
     
@@ -43,7 +43,7 @@
         }
         else
         {
-            header("location:index2.php");
+            header("location:doctor-dashboard/doctor-dashboard.php");
         }
     }
 
@@ -68,7 +68,7 @@
         }
         else
         {
-            header("location:index3.php");
+            header("location:admin-dashboard/admin-dashboard.php");
         }
         
     }

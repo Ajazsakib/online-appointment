@@ -93,11 +93,11 @@
       </li>
         
         <li class="nav-item">
-        <a class="nav-link" href="#">Sign in</a>
+        <a class="nav-link" href="login.php">Sign in</a>
       </li>
         
         <li class="nav-item">
-        <a class="nav-link btn btn-primary btn-green" href="#">Sign up</a>
+        <a class="nav-link btn btn-primary btn-green" href="patient_registration.php">Sign up</a>
       </li>
       
     </ul>

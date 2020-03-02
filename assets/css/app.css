@@ -1,3 +1,9 @@
+ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 .user-detail
 {
     width: 1140px;
@@ -81,4 +87,129 @@
    display: flex;
     align-items: center;
     height: 100vh;
+}
+
+#admin-header
+{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #04e8b0;
+    padding: 0px 32px 0px 0px;
+}
+#admin-header .logo
+{
+    color: #ffffff;
+    padding: 5px 0px 0px;
+    width: 250px;
+   
+    background-color: #0ccc9d;
+}
+#admin-header .logo h3
+{
+     margin-left: 16px;
+}
+#admin-header .profile-menu
+{
+    margin: 0px;
+}
+#admin-header .profile-menu ul li
+{
+    display: inline-block;
+    position: relative;
+}
+#admin-header .profile-menu ul ul
+{
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    display: block;
+    background-color: #0ccc9d;
+    width: 130px;
+    display: none;
+    border: 1px solid #f5f5f5;
+}
+#admin-header .profile-menu ul ul li
+{
+    display: block;
+}
+#admin-header .profile-menu ul li:hover ul
+{
+    display: block;
+}
+#admin-header .profile-menu ul li a
+{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 11px 16px 15px;
+}
+#admin-header .profile-menu ul li a:hover
+{
+    background-color: #0ccc9d;
+}
+#admin-header .profile-menu ul li a i
+{
+    margin-left: 20px;
+}
+.sidebar
+{
+    width: 250px;
+    background-color: #222d32;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    height: calc(100vh - 50px);
+    padding: 50px 0px 0px;
+}
+.sidebar ul
+{
+    
+}
+.sidebar ul li
+{
+    margin: 21px 0px;
+}
+.sidebar ul li a
+{
+    color: #b8c7ce;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 12px 30px 12px 15px;
+}
+.sidebar ul li a i
+{
+    float: right;
+    font-size: 12px;
+    
+}
+.sidebar ul li a:hover
+{
+    color: #fff;
+    background: #1e282c;
+}
+.sidebar .user-panel
+{
+    display: flex;
+    color: #ffffff;
+    padding-left: 18px;
+}
+.sidebar .user-panel .user-img
+{
+    width: 40px;
+    height: 40px;
+}
+.sidebar .user-panel .user-img img
+{
+    width: 100%;
+    height: 100%;
+}
+.sidebar .user-panel .username
+{
+    margin: 8px 0px 0px 30px;
 }
