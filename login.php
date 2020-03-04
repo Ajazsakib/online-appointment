@@ -21,7 +21,7 @@
             header("location:user-dashboard/user-dashboard.php");
         }
     }
-    
+    // this is dummy text
 ?>
 
 <?php 
