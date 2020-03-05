@@ -183,6 +183,7 @@
                             
                         </div>
                         <button type="submit" class="btn btn-primary btn-submit" name="submit">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-submit" name="submit">Submit</button>
                        
                         
                     </form>
