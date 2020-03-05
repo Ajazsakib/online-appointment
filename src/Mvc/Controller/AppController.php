@@ -13,6 +13,11 @@ class AppController {
 		die;
 	}
 
+	public function about() {
+		include PAGE_PATH . '/about_us.php';
+		die;
+	}
+
 	public function register_form() {
 		include PAGE_PATH.'/register_submit.php';
 		die;

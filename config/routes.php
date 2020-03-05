@@ -2,8 +2,6 @@
 
 use Mvc\Routing\Router as Router;
 
-
-
 $routerArr = array(
     '/' => function () {
 		return array(
@@ -23,7 +21,13 @@ $routerArr = array(
             "action" => 'register_form',
             "method" => 'post'
 		);
-    }
+    },
+    '/about-us' => function () {
+        return array(
+			"controller" => "AppController",
+            "action" => 'about',
+		);
+    },
 );
 
 foreach($routerArr as $routePath => $func) {
