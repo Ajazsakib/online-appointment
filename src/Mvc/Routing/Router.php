@@ -67,7 +67,7 @@ class Router
             
             // Add 'find string end' automatically
             $route['expression'] = $route['expression'] . '$';
-            
+
             // Check path match
             if (preg_match('#' . $route['expression'] . '#' . ($case_matters ? '' : 'i'), $path, $matches)) {
                 $path_match_found = true;
@@ -81,9 +81,12 @@ class Router
                         if ($basepath != '' && $basepath != '/') {
                             array_shift($matches); // Remove basepath
                         }
-                        
-                        call_user_func_array($route['function'], $matches);
-                        
+
+                        $result = call_user_func_array($route['function'], $matches);
+                        $controller = 'Mvc\\Controller\\'.$result['controller'];
+                        $instance = new $controller;
+						$instance->$result['action']();
+
                         $route_match_found = true;
                         
                         // Do not check other routes

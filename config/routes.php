@@ -6,10 +6,12 @@ use Mvc\Routing\Router as Router;
 
 $routerArr = array(
     '/' => function () {
-        require_once VIEW_PATH . '/home.php';
+		return array(
+			"controller" => "AppController",
+			"action" => 'home',
+		);
     },
 
-    
     '/abc' => function (){
         echo 'sssefewafdfffffffffffffss';
     }
