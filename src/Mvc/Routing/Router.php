@@ -81,7 +81,6 @@ class Router
                         if ($basepath != '' && $basepath != '/') {
                             array_shift($matches); // Remove basepath
                         }
-                        echo '<pre>'; print_r($matches); debug('hello'); die;
 
                         $result = call_user_func_array($route['function'], $matches);
                         $controller = 'Mvc\\Controller\\'.$result['controller'];

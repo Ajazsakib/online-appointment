@@ -2,6 +2,7 @@
 
 use Mvc\Routing\Router as Router;
 
+
 $routerArr = array(
     '/' => function () {
 		return array(
