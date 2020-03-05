@@ -11,9 +11,18 @@ $routerArr = array(
 			"action" => 'home',
 		);
     },
-
-    '/abc' => function (){
-        echo 'sssefewafdfffffffffffffss';
+    '/register' => function () {
+        return array(
+			"controller" => "AppController",
+			"action" => 'register',
+		);
+    },
+    '/register-form' => function () {
+        return array(
+			"controller" => "AppController",
+            "action" => 'register_form',
+            "method" => 'post'
+		);
     }
 );
 

@@ -4,26 +4,28 @@ if(!defined('DEBUG'))
     define('DEBUG', 1);
 
 if (!defined('WEB_DOMAIN_NAME'))
-	define('WEB_DOMAIN_NAME', 'my.html5');
+	define('WEB_DOMAIN_NAME', 'my.practo');
 
 if (!defined('WEB_DOMAIN_URL'))
     define('WEB_DOMAIN_URL', 'http://'.WEB_DOMAIN_NAME);
     
 if (!defined('CONTROLLER_PATH'))
-    define('CONTROLLER_PATH', WEB_DOMAIN_URL . DS . 'src/Controller');
+    define('CONTROLLER_PATH', dirname(__DIR__) . DS . 'src/Controller');
     
 if (!defined('VIEW_PATH'))
     define('VIEW_PATH', dirname(__DIR__) . DS . 'views');
-    
 
+if (!defined('PAGE_PATH'))
+    define('PAGE_PATH', VIEW_PATH . DS . 'pages');
+    
 if (!defined('IMG_PATH'))
-    define('IMG_PATH', WEB_DOMAIN_URL . DS . 'assets/images');
+    define('IMG_PATH', dirname(__DIR__) . DS . 'assets/images');
 
 if (!defined('CSS_PATH'))
-    define('CSS_PATH', WEB_DOMAIN_URL . DS . 'assets/css');
+    define('CSS_PATH', dirname(__DIR__) . DS . 'assets/css');
 
 if (!defined('JS_PATH'))
-    define('JS_PATH', WEB_DOMAIN_URL . DS . 'assets/js');
+    define('JS_PATH', dirname(__DIR__) . DS . 'assets/js');
 
 if (!defined('HOSTNAME'))
     define("HOSTNAME" , "localhost");
@@ -35,7 +37,7 @@ if (!defined('PASSWORD'))
     define("PASSWORD" , "");
 
 if (!defined('DBNAME'))
-    define("DBNAME" , "ignou_project");
+    define("DBNAME" , "practo");
 
 
 if(DEBUG) {

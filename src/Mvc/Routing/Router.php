@@ -85,7 +85,8 @@ class Router
                         $result = call_user_func_array($route['function'], $matches);
                         $controller = 'Mvc\\Controller\\'.$result['controller'];
                         $instance = new $controller;
-						$instance->$result['action']();
+                        $action = $result['action'];
+						$instance->$action();
 
                         $route_match_found = true;
                         
