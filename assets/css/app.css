@@ -21,7 +21,7 @@ ul
 }
 .btn
 {
-    background: #c20302;
+/*    background: #c20302;*/
     color: #ffffff;
     padding: 10px 30px;
     border: 0px !important;
@@ -40,6 +40,10 @@ ul
     background-color: #22c383 !important;
     padding: 8px 30px !important;
     margin-left: 15px;
+}
+header
+{
+    width: 100%;
 }
 .navbar
 {

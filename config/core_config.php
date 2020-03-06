@@ -37,7 +37,7 @@ if (!defined('PASSWORD'))
     define("PASSWORD" , "");
 
 if (!defined('DBNAME'))
-    define("DBNAME" , "practo");
+    define("DBNAME" , "online-appointment");
 
 
 if(DEBUG) {

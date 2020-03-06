@@ -10,42 +10,49 @@
 </head>
 <body>
 
-<?php include_once(VIEW_PATH.'/elements/header.php'); ?>
+
 
 <div class="container-fluid">
+    <?php include_once(VIEW_PATH.'/elements/header.php'); ?>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+        <div class="row" style="margin: 50px 0px;">
+            <div class="col-md-12">
+                <h2 class="text-center">Registration Form</h2>
                 <form action="/register-form" method="POST">
-                    <div class="form-group">
-                        <label>Patient Name</label>
-                        <input type="text" class="form-control" name="patient_name" />
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Patient Name</label>
+                            <input type="text" class="form-control" name="patient_name" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>username</label>
+                            <input type="text" class="form-control" name="username" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>password</label>
+                            <input type="password" class="form-control" name="patient_password" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>email</label>
+                            <input type="text" class="form-control" name="patient_email" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Date Of Birth</label>
+                            <input type="date" class="form-control" name="patient_dob" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Address</label>
+                            <textarea class="form-control" name="patient_address"></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Mobile</label>
+                            <input type="text" class="form-control" name="patient_contact" />
+                        </div>
+                        
                     </div>
-                    <div class="form-group">
-                        <label>username</label>
-                        <input type="text" class="form-control" name="username" />
-                    </div>
-                    <div class="form-group">
-                        <label>password</label>
-                        <input type="password" class="form-control" name="patient_password" />
-                    </div>
-                    <div class="form-group">
-                        <label>email</label>
-                        <input type="text" class="form-control" name="patient_email" />
-                    </div>
-                    <div class="form-group">
-                        <label>Date Of Birth</label>
-                        <input type="date" class="form-control" name="patient_dob" />
-                    </div>
-                    <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" name="patient_address"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Mobile</label>
-                        <input type="text" class="form-control" name="patient_contact" />
-                    </div>
+                    
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    
                 </form>
                 
             </div>
@@ -53,7 +60,7 @@
     </div>
 </div>
 
-<?php include_once(VIEW_PATH.'/elements/footer.php'); ?>
+<?php // include_once(VIEW_PATH.'/elements/footer.php'); ?>
 
 </body>
 </html>

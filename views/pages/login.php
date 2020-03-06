@@ -111,7 +111,7 @@
                               </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">      <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">      <form action="/user-dashboard" method="POST">
                                 <div class="form-group">
                                     <label>Enter Register No</label>
                                     <input type="text" class="form-control" name="patient_login_contact">
@@ -124,7 +124,7 @@
                               </form>
                             </div>
                           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                            <form action="/doctor-dashboard" method="POST">
                                 <div class="form-group">
                                     <label>Doctor's Phone No</label>
                                     <input type="text" class="form-control" name="doctor_login_contact">
@@ -137,7 +137,7 @@
                               </form>  
                           </div>
                           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                            <form action="/admin-dashboard" method="POST">
                                 <div class="form-group">
                                     <label>Enter DOB</label>
                                     <input type="text" class="form-control" name="admin_login_dob">

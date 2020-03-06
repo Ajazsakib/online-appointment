@@ -17,6 +17,39 @@ $routerArr = array(
 		$postData
 	],
     [
+		'/user-dashboard',
+		function () {
+			return array(
+				"controller" => "AppController",
+				"action" => 'user_dashboard',
+			);
+		},
+		'post',
+		$postData
+	],
+    [
+		'/doctor-dashboard',
+		function () {
+			return array(
+				"controller" => "AppController",
+				"action" => 'doctor_dashboard',
+			);
+		},
+		'post',
+		$postData
+	],
+    [
+		'/admin-dashboard',
+		function () {
+			return array(
+				"controller" => "AppController",
+				"action" => 'admin_dashboard',
+			);
+		},
+		'post',
+		$postData
+	],
+    [
     	'/', // url always use "-" in url
 		function () { // function to use calculation
 			return array(
@@ -36,6 +69,16 @@ $routerArr = array(
 		},
 		'get',
 	],
+    [
+		'/login',
+		function () {
+			return array(
+				"controller" => "AppController",
+				"action" => 'login',
+			);
+		},
+		'get',
+	],
 	[
 		'/about-us',
 		function () {
@@ -45,7 +88,7 @@ $routerArr = array(
 			);
 		},
 		'get',
-	],
+	]
 );
 
 foreach($routerArr as $routeParams) {
