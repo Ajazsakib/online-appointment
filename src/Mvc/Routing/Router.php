@@ -16,11 +16,12 @@ class Router
      * @param string|array $method  Either a string of allowed method or an array with string values
      *
      */
-    public static function add($expression, $function, $method = 'get') {
+    public static function add($expression, $function, $method = 'get', $data = array()) {
         array_push(self::$routes, Array(
             'expression' => $expression,
             'function' => $function,
-            'method' => $method
+            'method' => $method,
+			'data' => $data,
 		));
     }
     
@@ -81,12 +82,15 @@ class Router
                         if ($basepath != '' && $basepath != '/') {
                             array_shift($matches); // Remove basepath
                         }
-
                         $result = call_user_func_array($route['function'], $matches);
                         $controller = 'Mvc\\Controller\\'.$result['controller'];
                         $instance = new $controller;
                         $action = $result['action'];
-						$instance->$action();
+                        if(strtolower($route['method']) === 'get') {
+							$instance->$action();
+						} else {
+							$instance->$action($route['data']);
+						}
 
                         $route_match_found = true;
                         

@@ -18,8 +18,9 @@ class AppController {
 		die;
 	}
 
-	public function register_form() {
-		include PAGE_PATH.'/register_submit.php';
+	public function register_form($data) {
+		echo "<pre>"; print_r($data); die;
 		die;
+		//include PAGE_PATH.'/thank_you.php';
 	}
 }
