@@ -8,18 +8,20 @@ class Router
     private static $routes = Array();
     private static $pathNotFound = null;
     private static $methodNotAllowed = null;
-    
+
     /**
      * Function used to add a new route
-     * @param string $expression    Route string or expression
-     * @param callable $function    Function to call if route with allowed method is found
-     * @param string|array $method  Either a string of allowed method or an array with string values
-     *
+     * @param string $expression Route string or expression
+     * @param $controller
+     * @param $action
+     * @param string|array $method Either a string of allowed method or an array with string values
+     * @param array $data
      */
-    public static function add($expression, $function, $method = 'get', $data = array()) {
+    public static function add($expression, $controller, $action, $method = 'get', $data = array()) {
         array_push(self::$routes, Array(
             'expression' => $expression,
-            'function' => $function,
+            'controller' => $controller,
+            'action' => $action,
             'method' => $method,
 			'data' => $data,
 		));
@@ -82,18 +84,14 @@ class Router
                         if ($basepath != '' && $basepath != '/') {
                             array_shift($matches); // Remove basepath
                         }
-                        $result = call_user_func_array($route['function'], $matches);
-                        $controller = 'Mvc\\Controller\\'.$result['controller'];
+                        //$result = call_user_func_array($route['function'], $matches);
+                        $controller = 'Mvc\\Controller\\'.$route['controller'];
                         $instance = new $controller;
-                        $action = $result['action'];
-                        if(strtolower($route['method']) === 'get') {
-							$instance->$action();
-						} else {
-							$instance->$action($route['data']);
-						}
+                        $action = $route['action'];
+                        $data = $route['data'];
+                        $instance->$action($data);
 
                         $route_match_found = true;
-                        
                         // Do not check other routes
                         break;
                     }

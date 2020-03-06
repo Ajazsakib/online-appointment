@@ -3,102 +3,56 @@
 use Mvc\Routing\Router as Router;
 
 $postData = $_POST;
-
 $routerArr = array(
+    [
+        "url" => '/', // page url
+        "controller" => "AppController", // class controller should be added
+        "action" => 'home', // action to be called
+        "method" => "get" // OPTIONAL | default value is get;
+    ],
 	[
-		'/register-form',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'register_form',
-			);
-		},
-		'post',
-		$postData
+		"url" => '/thank-you',
+        "controller" => "AppController",
+        "action" => 'register_form',
+		"method" => "post",
+		"data" => $postData
 	],
     [
-		'/user-dashboard',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'user_dashboard',
-			);
-		},
-		'post',
-		$postData
+        "url" => '/user-dashboard',
+        "controller" => "AppController",
+        "action" => 'user_dashboard',
+    ],
+    [
+        "url" => '/doctor-dashboard',
+        "controller" => "AppController",
+        "action" => 'doctor_dashboard',
 	],
     [
-		'/doctor-dashboard',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'doctor_dashboard',
-			);
-		},
-		'post',
-		$postData
-	],
+        "url" => '/admin-dashboard',
+        "controller" => "AppController",
+        "action" => 'admin_dashboard',
+    ],
     [
-		'/admin-dashboard',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'admin_dashboard',
-			);
-		},
-		'post',
-		$postData
-	],
+        "url" => '/register',
+        "controller" => "AppController",
+        "action" => 'register',
+    ],
     [
-    	'/', // url always use "-" in url
-		function () { // function to use calculation
-			return array(
-				"controller" => "AppController", // controller name
-				"action" => 'home', // action Name
-			);
-    	},
-		'get', // Method for
-	],
-	[
-		'/register',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'register',
-			);
-		},
-		'get',
-	],
-    [
-		'/login',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'login',
-			);
-		},
-		'get',
-	],
-	[
-		'/about-us',
-		function () {
-			return array(
-				"controller" => "AppController",
-				"action" => 'about',
-			);
-		},
-		'get',
-	]
+        "url" => '/login',
+        "controller" => "AppController",
+        "action" => 'login',
+    ],
 );
 
 foreach($routerArr as $routeParams) {
-	$route = $routeParams[0];
-	$func = $routeParams[1];
-	$method = isset($routeParams[2]) ? $routeParams[2] : 'get';
-	$data = isset($routeParams[3]) ? $routeParams[3] : null;
-    Router::add($route, $func, $method, $data);
+	$route = $routeParams['url'];
+	$controller = $routeParams['controller'];
+	$action = $routeParams['action'];
+    $method = isset($routeParams['method']) ? $routeParams['method'] : 'get';
+    $data = isset($routeParams['data']) ? $routeParams['data'] : null;
+    Router::add($route, $controller, $action, $method, $data);
 }
 
 foreach($routerArr as $routeParams) {
-    Router::run($routeParams[0]);
+    Router::run($routeParams['url']);
 }

@@ -8,4 +8,3 @@
 
     require_once(ROOT . DS . 'public/index.php');
 
-?>
