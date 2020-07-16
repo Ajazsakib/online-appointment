@@ -18,9 +18,57 @@ class AppController {
 		die;
 	}
 
-	public function register_form($data) {
-//		echo "<pre>"; print_r($data); die;
-        include PAGE_PATH.'/thank_you.php';
+	public function form_validation($data) {
+        if(empty($data)) return;
+            $patient_name_err = $username_err = $patient_password_err = $patient_contact_err = "";
+            $patient_name = $patient_password = $username = "";
+//        $patient_name = $data['patient_name'];
+        $username = $data['username'];
+//        $patient_password = $data['patient_password'];
+        $patient_email = $data['patient_email'];
+        $patient_dob = $data['patient_dob'];
+        $patient_address = $data['patient_address'];
+        $patient_contact = $data['patient_contact'];
+        
+        if(empty($data['patient_name'])) {
+            $patient_name_err = "Patient name Missing";
+            echo $patient_name_err;
+            return false;
+             include PAGE_PATH.'/thank_you.php';
+           
+        }else {
+            $patient_name = $data['patient_name'];
+        }
+        if(empty($data['username'])) {
+            $username_err = "Username Missing";
+            echo $username_err;
+            return false;
+           
+        }else {
+            $username = $data['username'];
+        }
+        if(empty($data['patient_password'])) {
+            $patient_password_err = "Password Missing";
+            echo $patient_password_err;
+            return false;
+           
+        }else {
+            $patient_password = $data['patient_password'];
+        }
+        
+        $q1 = "select * from patient_table where patient_contact = '$patient_contact' ";
+        $fire1 = query($q1);
+        $num = mysqli_num_rows($fire1);
+        if($num > 0){
+            echo "<h2>You Are Not Registered</h2>";
+        }
+        else{
+             $q2 = "insert into `patient_table`(patient_name , patient_password , patient_email , patient_dob , patient_address , username , patient_contact) values('$patient_name' , '$patient_password' , '$patient_email' , '$patient_dob' , '$patient_address' , '$username' , '$patient_contact'); ";
+            $fire2 = query($q2);
+
+             include PAGE_PATH.'/thank_you.php';
+        }
+        
 		die;
 	}
     

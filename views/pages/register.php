@@ -18,7 +18,7 @@
         <div class="row" style="margin: 50px 0px;">
             <div class="col-md-12">
                 <h2 class="text-center">Registration Form</h2>
-                <form action="/register-form" method="POST">
+                <form action="/thank-you" method="POST">
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Patient Name</label>

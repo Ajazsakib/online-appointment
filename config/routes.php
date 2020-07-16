@@ -13,7 +13,7 @@ $routerArr = array(
 	[
 		"url" => '/thank-you',
         "controller" => "AppController",
-        "action" => 'register_form',
+        "action" => 'form_validation',
 		"method" => "post",
 		"data" => $postData
 	],

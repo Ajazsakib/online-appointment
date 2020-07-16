@@ -6,5 +6,5 @@
     
     require_once(ROOT . DS . 'src/autoload.php');
 
-    require_once(ROOT . DS . 'public/index.php');
+    // require_once(ROOT . DS . 'public/index.php');
 
